@@ -1,0 +1,55 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'ebooks.css' %}">
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>ELibrary</title>
+</head>
+<body>
+    <!-- <h1>35cr  </h1> -->
+    <header>
+        <nav class="nav">
+          <div class="nav-logo">
+            <h1>ELibrary</h1> 
+          </div>
+          <div id="lists">
+            <a class="list" href="books" target="">Home</a>
+            <a class="list" href="#" target="_blank">Category</a>
+            <a class="list" href="about" target="">About</a>
+            <a class="list" href="#" target="_blank">Contact Us</a>
+        </div>
+        <div class="menu">
+            <a id="icon" onclick="show()">=</a>
+        </div>
+        </nav>
+      </header>
+      <!-- ,document.getElementById('icon').innerHTML = 'x' -->
+    {%block body%}
+    {%endblock%}
+    <script>
+      const show = () => {
+        var icon = document.getElementById('icon');
+        var menu = document.getElementById("lists");
+        var atag = document.getElementsByTagName('a');
+    
+        if(icon.innerHTML=== "x" ){
+            icon.innerHTML = "=";
+            menu.style.display = "none";
+
+        }
+        else{
+            icon.innerHTML = "x";
+            menu.style.display = "flex";
+            atag.style.margin = "0px 5px 0 0";
+        }
+      }  
+    </script>
+</body>
+</html>
